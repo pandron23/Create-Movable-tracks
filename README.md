@@ -35,10 +35,12 @@ Now released publicly for the wider Create community
 ### - Minecraft 1.21.1
 ### - NeoForge 21.1.22x
 
-## Special Thanks
+### =======
+
+Special Thanks
+=======
 to my IDE, [IntelliJ](https://www.jetbrains.com/idea/) 
 for making the devemopment of this mod possible!
-### =======
 
 Installation information
 =======
