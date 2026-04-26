@@ -1,6 +1,13 @@
 # Movable Tracks
+
+> [!IMPORTANT]
+> **Це форк (копія) оригінального проєкту.**
+> Оригінальний автор: **Fortsumter01**
+> Оригінальний репозиторій: [https://github.com/Fortsumter01/Movable-Tracks](https://github.com/Fortsumter01/Movable-Tracks)
+
 ## is a Create add-on that brings a new level of rail engineering to the game by allowing train tracks to become part of moving contraptions!
 ### Source code on [GitHub](https://github.com/Fortsumter01/Movable-Tracks)
+
 ### =======
 Instead of rails only serving as fixed infrastructure, this mod opens the door to...
 - dynamic rail systems 
