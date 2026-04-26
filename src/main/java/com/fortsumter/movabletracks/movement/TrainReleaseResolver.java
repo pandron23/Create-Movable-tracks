@@ -288,6 +288,16 @@ final class TrainReleaseResolver {
         }
 
         Vec3 look = front != null && back != null ? front.subtract(back) : Vec3.ZERO;
+        if (look.lengthSqr() < 1.0E-4 && !train.carriages.isEmpty()) {
+            Vec3[] fallback = { null };
+            train.carriages.getFirst().forEachPresentEntity(ce -> {
+                if (fallback[0] == null) fallback[0] = ce.getLookAngle();
+            });
+            if (fallback[0] != null) {
+                look = fallback[0];
+            }
+        }
+
         Vec3 horizontal = new Vec3(look.x, 0, look.z);
         if (horizontal.lengthSqr() > 1.0E-4) {
             return horizontal.normalize();

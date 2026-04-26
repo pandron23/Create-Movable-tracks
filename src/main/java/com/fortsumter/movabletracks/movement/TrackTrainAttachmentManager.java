@@ -106,8 +106,8 @@ public final class TrackTrainAttachmentManager {
             return;
         }
 
-        List<AbstractContraptionEntity> contraptions = pruneContraptions(level, tracked);
         updateAttachedTrains(level, tracked);
+        List<AbstractContraptionEntity> contraptions = pruneContraptions(level, tracked);
         attachEligibleTrains(level, contraptions);
     }
 
@@ -152,10 +152,14 @@ public final class TrackTrainAttachmentManager {
             }
 
             AbstractContraptionEntity contraption = resolveContraption(tracked, attachment.contraptionId());
-            if (contraption != null) {
+            if (contraption != null && contraption.isAlive() && contraption.level() == level && carriesTracks(contraption)) {
                 attachment.resetReleaseAttempts();
                 TrainAttachmentController.applyAttachment(level, train, contraption, attachment);
                 return false;
+            }
+
+            if (contraption != null && contraption.level() == level) {
+                TrainAttachmentController.applyAttachment(level, train, contraption, attachment);
             }
 
             if (TrainReleaseResolver.tryRelease(level, train)) {
